@@ -9,3 +9,9 @@ Technologies used:
 - [x] CSS
 - [x] IEX Cloud API
 
+Explored in Django: 
+- [x] Functional based views
+- [x] Dotenv file
+- [x] Django messages
+- [x] Jinja templates
+
