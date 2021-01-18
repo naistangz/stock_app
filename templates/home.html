@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} <title>Home Page</title> {% endblock %}
+{% block content %}
+
+{% if ticker %}
+    {{ ticker }}
+{% endif %}
+
+
+    {% if api %}
+        {% if api == 'Error...' %}
+            <p>There was a problem with your ticker symbol, please try again...</p>
+            {% else %}
+            <h1>{{ api.companyName }}</h1>
+            <ul>
+                <li>Symbol: {{ api.symbol }}</li>
+                <li>Latest Price: {{ api.latestPrice }}</li>
+                <li>52 Week High: {{ api.week52High }}</li>
+                <li>52 Week Low: {{ api.week52Low }}</li>
+                <li>YTD Change: {{ api.ytdChange }}</li>
+            </ul>
+            {% for key, value in api.items %}
+                <div>
+                    <strong>{{ key }}</strong>:<p>{{ value }}</p>
+                </div>
+            {% endfor %}
+
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}

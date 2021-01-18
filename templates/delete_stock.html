@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Delete Stock</title>{% endblock %}
+{% block content %}
+
+
+<h3>Delete a Stock</h3>
+{% if symbols %}
+    {% for symbol in symbols %}
+    <a class="btn btn-secondary" href="{% url 'delete' symbol.id %}">Delete {{ symbol }}</a></ul>
+    {% endfor %}
+    {% else %}
+    <br>
+    <h3>You don't have any stocks...</h3>
+    {% endif %}
+{% endblock %}
